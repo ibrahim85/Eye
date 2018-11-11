@@ -9,6 +9,12 @@ Deep Learning for Eye Disease Recognition. :eye:
 3. Apply _multi-task learning_ to boost performance.
 
 
+## Performance
+| Model | Epoch | Precision | Recall |
+| :---: | :---: | :---: | :---: |
+| ResNet18 | - | - | - |
+
+
 ## Contributor
 * [Xueying Zhang](https://github.com/Schneey)
 * [Lucas Xu](https://github.com/lucasxlu)
