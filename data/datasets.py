@@ -23,15 +23,15 @@ class EyeDiseaseDataset(Dataset):
     def __init__(self, train=True, transform=None):
         """
         PyTorch Dataset definition
-        :param train_val:
+        :param train:
         :param transform:
         """
         images = []
         labels = []
-        for i, cls_dir in os.listdir(cfg['image_base']):
-            labels.append(i)
-            for _ in os.listdir(os.listdir(cfg['image_base'], cls_dir)):
+        for i, cls_dir in enumerate(os.listdir(cfg['image_base'])):
+            for _ in os.listdir(os.path.join(cfg['image_base'], cls_dir)):
                 images.append(os.path.join(cfg['image_base'], cls_dir, _))
+                labels.append(i)
 
         X_train, X_test, y_train, y_test = train_test_split(images, labels, test_size=0.2, random_state=42,
                                                             stratify=labels)

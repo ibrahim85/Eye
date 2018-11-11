@@ -111,7 +111,7 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
                     tmp_y_true = []
                     tmp_filenames = []
 
-                    for data in dataloaders['val']:
+                    for data in dataloaders['test']:
                         images, labels, filename = data['image'], data['label'], data['filename']
                         images = images.to(device)
                         labels = labels.to(device)
