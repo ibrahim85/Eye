@@ -2,6 +2,15 @@
 ## Introduction
 Deep Learning for Eye Disease Recognition. :eye:
 
+### Data Description
+| Type | Capacity |
+| :---: | :---: |
+| Norm | 7770 |
+| AMD | 720 |
+| DR | 270 |
+| Glaucoma | 450 |
+| Myopia | 790 |
+ 
 
 ## Solutions
 1. Apply _transfer learning_ to recognize eye disease. Namely, we first pretrain ResNeXt on ImageNet, and fine-tune on target source.
