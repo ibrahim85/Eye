@@ -35,6 +35,7 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
     :param inference:
     :return:
     """
+    model_name = model.__class__.__name__
     model = model.float()
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
@@ -49,7 +50,7 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
         print('Dataset size of {0} is {1}...'.format(_, dataloaders[_].__len__()))
 
     if not inference:
-        print('Start training %s...' % model.__class__.__name__)
+        print('Start training %s...' % model_name)
         since = time.time()
 
         best_model_wts = copy.deepcopy(model.state_dict())
@@ -127,7 +128,7 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
 
                     tmp_acc = tmp_correct / tmp_total
 
-                    print('Confusion Matrix of {0} on test set: '.format(model.__class__.__name__))
+                    print('Confusion Matrix of {0} on test set: '.format(model_name))
                     cm = confusion_matrix(tmp_y_true, tmp_y_pred)
                     print(cm)
                     cm = np.array(cm)
@@ -140,10 +141,10 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
                         precisions.append(cm[i][i] / sum(cm[:, i].tolist()))
                         recalls.append(cm[i][i] / sum(cm[i, :].tolist()))
 
-                    print("Precision of {0} on test set = {1}".format(model.__class__.__name__,
+                    print("Precision of {0} on test set = {1}".format(model_name,
                                                                       sum(precisions) / len(precisions)))
                     print(
-                        "Recall of {0} on test set = {1}".format(model.__class__.__name__, sum(recalls) / len(recalls)))
+                        "Recall of {0} on test set = {1}".format(model_name, sum(recalls) / len(recalls)))
 
                     best_acc = epoch_acc
                     best_model_wts = copy.deepcopy(model.state_dict())
@@ -152,7 +153,7 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
                     model_path_dir = './model'
                     mkdirs_if_not_exist(model_path_dir)
                     torch.save(model.state_dict(),
-                               './model/{0}_best_epoch-{1}.pth'.format(model.__class__.__name__, epoch))
+                               './model/{0}_best_epoch-{1}.pth'.format(model_name, epoch))
 
         time_elapsed = time.time() - since
         print('Training complete in {:.0f}m {:.0f}s'.format(
@@ -163,11 +164,11 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
         model.load_state_dict(best_model_wts)
         model_path_dir = './model'
         mkdirs_if_not_exist(model_path_dir)
-        torch.save(model.state_dict(), './model/%s.pth' % model.__class__.__name__)
+        torch.save(model.state_dict(), './model/%s.pth' % model_name)
 
     else:
-        print('Start testing %s...' % model.__class__.__name__)
-        model.load_state_dict(torch.load(os.path.join('./model/%s.pth' % model.__class__.__name__)))
+        print('Start testing %s...' % model_name)
+        model.load_state_dict(torch.load(os.path.join('./model/%s.pth' % model_name)))
 
     model.eval()
 
@@ -199,9 +200,9 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
             y_true += labels.to("cpu").detach().numpy().tolist()
             filenames += filename
 
-    print('Accuracy of {0} on test set: {1}% '.format(model.__class__.__name__, 100 * correct / total))
+    print('Accuracy of {0} on test set: {1}% '.format(model_name, 100 * correct / total))
     print(
-        'Confusion Matrix of {0} on test set: '.format(model.__class__.__name__))
+        'Confusion Matrix of {0} on test set: '.format(model_name))
 
     cm = confusion_matrix(y_true, y_pred)
     print(cm)
@@ -219,16 +220,16 @@ def train_model_with_ft(model, dataloaders, criterion, optimizer, scheduler, num
     print('Recall List: ')
     print(recalls)
 
-    print("Precision of {0} on test set = {1}".format(model.__class__.__name__,
+    print("Precision of {0} on test set = {1}".format(model_name,
                                                       sum(precisions) / len(precisions)))
     print(
-        "Recall of {0} on test set = {1}".format(model.__class__.__name__, sum(recalls) / len(recalls)))
+        "Recall of {0} on test set = {1}".format(model_name, sum(recalls) / len(recalls)))
 
     print('Output CSV...')
     col = ['filename', 'gt', 'pred', 'prob']
     df = pd.DataFrame([[filenames[i], y_true[i], y_pred[i], probs[i][0]] for i in range(len(filenames))],
                       columns=col)
-    df.to_csv("./output-%s.csv" % model.__class__.__name__, index=False)
+    df.to_csv("./output-%s.csv" % model_name, index=False)
     print('CSV has been generated...')
 
 
@@ -258,7 +259,7 @@ def run_eye_disease_rec(model, epoch):
 
 
 if __name__ == '__main__':
-    resnet = models.resnet18(pretrained=True)
+    resnet = models.resnet50(pretrained=True)
     num_ftrs = resnet.fc.in_features
     resnet.fc = nn.Linear(num_ftrs, 5)
 

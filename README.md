@@ -10,12 +10,12 @@ Deep Learning for Eye Disease Recognition. :eye:
 
 
 ## Performance
-| Model | Epoch | Precision | Recall |
-| :---: | :---: | :---: | :---: |
-| ResNet18 | - | - | - |
+| Model | Epoch | Accuracy | Precision | Recall |
+| :---: | :---: | :---: | :---: | :---: |
+| ResNet50 | - | 83.75% | 67.60% | 44.33% |
 
 
-## Contributor
+## Contributors
 * [Xueying Zhang](https://github.com/Schneey)
 * [Lucas Xu](https://github.com/lucasxlu)
 
