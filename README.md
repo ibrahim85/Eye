@@ -17,8 +17,7 @@ Deep Learning for Eye Disease Recognition. :eye:
 2. Apply _mixup_ and _sample paring_ for data augmentation.
 3. Apply _multi-task learning_ to boost performance.
 4. Apply _visual attention model_ to boost performance.
-5. Adopt [Easy Ensemble](https://cs.nju.edu.cn/zhouzh/zhouzh
- .files/publication/tsmcb09.pdf) to handle severe data imbalance problem.
+5. Adopt [Easy Ensemble](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/tsmcb09.pdf) to handle severe data imbalance problem.
 
 
 ## Performance
