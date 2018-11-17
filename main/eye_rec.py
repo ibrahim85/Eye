@@ -263,4 +263,12 @@ if __name__ == '__main__':
     num_ftrs = resnet.fc.in_features
     resnet.fc = nn.Linear(num_ftrs, 5)
 
+    # freeze the first 5 layers
+    ct = 0
+    for child in resnet.children():
+        ct += 1
+    if ct < 5:
+        for param in child.parameters():
+            param.requires_grad = False
+
     run_eye_disease_rec(model=resnet, epoch=200)

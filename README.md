@@ -30,3 +30,8 @@ Deep Learning for Eye Disease Recognition. :eye:
 * [Lucas Xu](https://github.com/lucasxlu)
 
 For more details, plz do hot hesitate to contact us! :smile:
+
+
+## Reference
+1. He, Kaiming, et al. ["Deep residual learning for image recognition."](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.
+2. Tajbakhsh, Nima, et al. "Convolutional neural networks for medical image analysis: Full training or fine tuning?." IEEE transactions on medical imaging 35.5 (2016): 1299-1312.
