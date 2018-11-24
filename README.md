@@ -23,7 +23,7 @@ Deep Learning for Eye Disease Recognition. :eye:
 ## Performance
 | Model | Epoch | Accuracy | Precision | Recall |
 | :---: | :---: | :---: | :---: | :---: |
-| ResNet50 | - | 83.75% | 67.60% | 44.33% |
+| ResNet50 | 29 | 82.36% | 64.62% | 44.73% |
 
 
 ## Contributors
