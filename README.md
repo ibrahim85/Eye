@@ -30,7 +30,7 @@ Deep Learning for Eye Disease Recognition. :eye:
 * [Xueying Zhang](https://github.com/Schneey)
 * [Lucas Xu](https://github.com/lucasxlu)
 
-For more details, plz do hot hesitate to contact us! :smile:
+For more details, plz do hot hesitate to contact us!
 
 
 ## Reference
@@ -44,3 +44,6 @@ diseases by image-based deep learning."](https://www.cell.com/cell/fulltext/S009
 5. Gulshan, Varun, et al. ["Development and validation of a deep learning 
 algorithm for detection of diabetic retinopathy in retinal fundus photographs
 ."](https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/45732.pdf) Jama 316.22 (2016): 2402-2410.
+6. Rajpurkar, Pranav, et al. ["Deep learning for chest radiograph diagnosis: 
+A retrospective comparison of the CheXNeXt algorithm to practicing 
+radiologists."](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002686&type=printable) PLOS Medicine 15.11 (2018): e1002686.
