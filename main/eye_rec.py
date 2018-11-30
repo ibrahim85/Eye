@@ -246,7 +246,7 @@ def run_eye_disease_rec(model, epoch):
 
     exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=50, gamma=0.1)
 
-    print('start loading PlantsDiseaseDataset...')
+    print('start loading EyeDiseaseDataset...')
     trainloader, testloader = data_loader.load_eye_disease_dataset()
 
     dataloaders = {
