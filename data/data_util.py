@@ -1,5 +1,9 @@
 import os
 import shutil
+import sys
+
+sys.path.append('../')
+from util.utils import mkdirs_if_not_exist
 
 
 def split_to_n_parts(source_dir, n):
@@ -10,6 +14,9 @@ def split_to_n_parts(source_dir, n):
     :return:
     """
     target_dirs = [source_dir.split('/')[-1] + '_{0}'.format(_) for _ in range(n)]
+
+    for target_dir in target_dirs:
+        mkdirs_if_not_exist(target_dir)
 
     capacity = int(len(os.listdir(source_dir)) / n)
 
