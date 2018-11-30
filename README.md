@@ -47,3 +47,9 @@ algorithm for detection of diabetic retinopathy in retinal fundus photographs
 6. Rajpurkar, Pranav, et al. ["Deep learning for chest radiograph diagnosis: 
 A retrospective comparison of the CheXNeXt algorithm to practicing 
 radiologists."](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002686&type=printable) PLOS Medicine 15.11 (2018): e1002686.
+7. [Deep-learning-assisted diagnosis for knee magnetic resonance imaging: 
+Development and retrospective validation of MRNet](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002699&type=printable) Bien N, Rajpurkar P, Ball 
+RL, Irvin J, Park A, et al. (2018) Deep-learning-assisted diagnosis for knee magnetic resonance imaging: Development and retrospective validation of MRNet. PLOS Medicine 15(11): e1002699. https://doi.org/10.1371/journal.pmed.1002699
+8. [Deep learning for chest radiograph diagnosis: A retrospective comparison 
+of the CheXNeXt algorithm to practicing radiologists](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002686&type=printable) Rajpurkar P, Irvin J, 
+Ball RL, Zhu K, Yang B, et al. (2018) Deep learning for chest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists. PLOS Medicine 15(11): e1002686. https://doi.org/10.1371/journal.pmed.1002686
